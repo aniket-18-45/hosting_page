@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Download - Voice Assistant{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="mb-5">
+                <i class="fas fa-download fa-5x text-primary mb-4"></i>
+                <h1 class="display-3 fw-bold mb-4">Download Voice Assistant</h1>
+                <p class="lead text-muted mb-0">Latest stable release - Ready for production use</p>
+            </div>
+            
+            {% if current_user.is_authenticated %}
+                <!-- Download for logged-in users -->
+                <div class="card border-0 shadow-lg mb-5">
+                    <div class="card-body p-5">
+                        <div class="row text-start">
+                            <div class="col-md-6">
+                                <h4 class="fw-bold mb-3">Voice Assistant v1.0.0</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-file-archive text-success me-2"></i>42.3 MB</li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-info me-2"></i>Released Dec 2024</li>
+                                    <li class="mb-2"><i class="fab fa-windows text-primary me-2"></i>Windows 7/8/10/11</li>
+                                    <li class="mb-2"><i class="fas fa-cpu text-warning me-2"></i>1GHz CPU, 256MB RAM</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{{ url_for('static', filename='downloads/MY_AI_ASSISTANT.zip') }}"
+   class="btn btn-primary btn-lg w-100 py-4 mb-3 shadow-lg">
+    <i class="fas fa-download me-2"></i>
+    Download for Windows
+</a>
+                                <div class="text-muted small">
+                                    <i class="fas fa-shield-alt me-1 text-success"></i>
+                                    Download tracked and recorded securely
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download History -->
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0"><i class="fas fa-history me-2"></i>Your Download History</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted">Your downloads are tracked in our MySQL database for statistics.</p>
+                    </div>
+                </div>
+                
+            {% else %}
+                <!-- Login prompt for guests -->
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5 text-center">
+                        <i class="fas fa-lock fa-3x text-muted mb-4"></i>
+                        <h3 class="mb-4">Login Required</h3>
+                        <p class="lead text-muted mb-4">Please login or create a free account to download.</p>
+                        <div class="d-grid gap-2 d-md-block">
+                            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-5 me-3 mb-3">
+                                <i class="fas fa-sign-in-alt me-2"></i>Login
+                            </a>
+                            <a href="{{ url_for('register') }}" class="btn btn-outline-primary btn-lg px-5 mb-3">
+                                <i class="fas fa-user-plus me-2"></i>Create Account
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

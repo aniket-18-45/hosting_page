@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - Voice Assistant{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex align-items-center mb-5">
+                <div class="bg-primary rounded-circle p-3 me-4 shadow">
+                    <i class="fas fa-user-circle fa-2x text-white"></i>
+                </div>
+                <div>
+                    <h1 class="mb-1">Welcome back, {{ current_user.name }}!</h1>
+                    <p class="text-muted mb-0">{{ current_user.email }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Stats Cards -->
+    <div class="row mb-5">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow h-100">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Users
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ "{:,}".format(total_users) }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow h-100">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Downloads
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ "{:,}".format(total_downloads) }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-download fa-2x text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow h-100">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Your Downloads
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ "{:,}".format(user_downloads) }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-cloud-download-alt fa-2x text-info"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow h-100">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Current Version
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">v1.0.0</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tag fa-2x text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Download Section -->
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+            <div class="card border-0 shadow-lg">
+                <div class="card-body p-5">
+                    <i class="fas fa-download fa-4x text-primary mb-4"></i>
+                    <h2 class="mb-4">Ready to Download?</h2>
+                    <p class="lead mb-4 text-muted">Latest version v1.0.0 - 42MB - Windows 7/8/10/11</p>
+                    <a href="{{ url_for('download') }}" class="btn btn-primary btn-lg px-5 py-3 shadow-lg">
+                        <i class="fas fa-download me-2"></i>Download for Windows
+                    </a>
+                    <div class="mt-4">
+                        <small class="text-muted">
+                            <i class="fas fa-shield-alt text-success me-1"></i>
+                            Secure download • Tracked in MySQL database
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="container-fluid bg-light py-4 mt-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-3">
+                <a href="{{ url_for('features') }}" class="text-decoration-none">
+                    <i class="fas fa-star fa-2x text-primary mb-2 d-block"></i>
+                    <h6 class="fw-bold">Features</h6>
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a href="{{ url_for('documentation') }}" class="text-decoration-none">
+                    <i class="fas fa-book fa-2x text-success mb-2 d-block"></i>
+                    <h6 class="fw-bold">Documentation</h6>
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a href="https://github.com" class="text-decoration-none" target="_blank">
+                    <i class="fab fa-github fa-2x text-dark mb-2 d-block"></i>
+                    <h6 class="fw-bold">GitHub</h6>
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a href="{{ url_for('logout') }}" class="text-decoration-none">
+                    <i class="fas fa-sign-out-alt fa-2x text-danger mb-2 d-block"></i>
+                    <h6 class="fw-bold">Logout</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

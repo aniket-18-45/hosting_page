@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block title %}Documentation - Voice Assistant{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Hero -->
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h1 class="display-4 fw-bold mb-4">Documentation</h1>
+            <p class="lead text-muted">Get started in 60 seconds</p>
+        </div>
+    </div>
+
+    <!-- Installation -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card border-0 shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0"><i class="fas fa-download me-2"></i>1. Installation</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: bold;">
+                                1
+                            </div>
+                            <h5>Download</h5>
+                            <p class="text-muted">Get the latest version from dashboard</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="step-number bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: bold;">
+                                2
+                            </div>
+                            <h5>Install</h5>
+                            <p class="text-muted">Run installer as Administrator</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="step-number bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: bold;">
+                                3
+                            </div>
+                            <h5>Start</h5>
+                            <p class="text-muted">Launch and start using voice commands</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Commands -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card border-0 shadow-lg">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0"><i class="fas fa-microphone me-2"></i>2. Voice Commands</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="border p-4 rounded-3">
+                                <h6 class="fw-bold text-primary mb-2">"Open Chrome"</h6>
+                                <p class="text-muted mb-2">Opens Google Chrome</p>
+                                <small class="badge bg-success">Works</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="border p-4 rounded-3">
+                                <h6 class="fw-bold text-primary mb-2">"Play music"</h6>
+                                <p class="text-muted mb-2">Opens your default music player</p>
+                                <small class="badge bg-success">Works</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="border p-4 rounded-3">
+                                <h6 class="fw-bold text-primary mb-2">"Open VS Code"</h6>
+                                <p class="text-muted mb-2">Launches Visual Studio Code</p>
+                                <small class="badge bg-success">Works</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="border p-4 rounded-3">
+                                <h6 class="fw-bold text-primary mb-2">"Shutdown computer"</h6>
+                                <p class="text-muted mb-2">System shutdown (with confirmation)</p>
+                                <small class="badge bg-warning">Admin</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screenshots -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h3 class="text-center mb-5">Screenshots</h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="screenshot-card shadow-lg border-0 overflow-hidden rounded-4">
+                        <img src="{{ url_for('static', filename='images/screenshots/Screenshot (183).png') }}"
+                            class="card-img-top" alt="Main Interface">
+                        <div class="p-3 bg-dark bg-opacity-75 text-white">
+                            <h6>Main Interface</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="screenshot-card shadow-lg border-0 overflow-hidden rounded-4">
+                        <img src="{{ url_for('static', filename='images/screenshots/Screenshot (184).png') }}"
+                            class="card-img-top" alt="Voice Recognition">
+                        <div class="p-3 bg-dark bg-opacity-75 text-white">
+                            <h6>Voice Recognition</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="screenshot-card shadow-lg border-0 overflow-hidden rounded-4">
+                        <img src="{{ url_for('static', filename='images/screenshots/Screenshot (185).png') }}"
+                            class="card-img-top" alt="Command History">
+                        <div class="p-3 bg-dark bg-opacity-75 text-white">
+                            <h6>settings</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card border-0 shadow-lg">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0"><i class="fas fa-tools me-2"></i>Troubleshooting</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6><i class="fas fa-microphone-slash text-danger me-2"></i>Microphone not working?</h6>
+                            <p class="text-muted small">Run as Administrator and check Windows privacy settings.</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6><i class="fas fa-volume-mute text-danger me-2"></i>No voice detection?</h6>
+                            <p class="text-muted small">Check microphone levels in Windows Sound settings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
