@@ -27,22 +27,22 @@ class Database:
             self.connect()
         return self.connection
     
-   def execute_query(self, query, params=None):
-    connection = self.get_connection()
-    cursor = connection.cursor(dictionary=True)
+    def execute_query(self, query, params=None):
+     connection = self.get_connection()
+     cursor = connection.cursor(dictionary=True)
 
-    cursor.execute(query, params)
+     cursor.execute(query, params)
 
-    if query.strip().upper().startswith("SELECT"):
+     if query.strip().upper().startswith("SELECT"):
         result = cursor.fetchall()
-    else:
+     else:
         connection.commit()
         result = cursor.rowcount
 
-    cursor.close()
-    connection.close()
+     cursor.close()
+     connection.close()
 
-    return result
+     return result
     
     def get_user_by_email(self, email):
         query = "SELECT * FROM users WHERE email = %s"
