@@ -16,7 +16,7 @@ class Database:
                  user=Config.MYSQL_USER,
                  password=Config.MYSQL_PASSWORD,
                  database=Config.MYSQL_DB,
-                 port=Config.MYSQL_PORT
+                 port=Config.MYSQL_PORT,
                  cursorclass=pymysql.cursors.DictCursor,
                  autocommit=True
             )
