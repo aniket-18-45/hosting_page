@@ -5,7 +5,8 @@ load_dotenv()
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
-    MYSQL_HOST = os.environ.get('MYSQL_HOST', 'mysql.railway.internal')
-    MYSQL_USER = os.environ.get('MYSQL_USER', 'root')
-    MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD', 'JUORraZQXgcNCpmbVddejcTwHFARIMkl')
-    MYSQL_DB = os.environ.get('MYSQL_DB', 'voice_assistant_db')
+    MYSQL_HOST = os.environ.get('MYSQLHOST')
+    MYSQL_USER = os.environ.get('MYSQLUSER')
+    MYSQL_PASSWORD = os.environ.get('MYSQLPASSWORD')
+    MYSQL_DB = os.environ.get('MYSQLDATABASE')
+    MYSQL_PORT = int(os.environ.get('MYSQLPORT', 3306))
