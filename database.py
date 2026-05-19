@@ -41,7 +41,7 @@ class Database:
         result = cursor.rowcount
 
       cursor.close()
-      connection.close()
+      
 
       return result
     
