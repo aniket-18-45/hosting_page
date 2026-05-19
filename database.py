@@ -12,12 +12,13 @@ class Database:
     def connect(self):
         try:
             self.connection = pymysql.connect(
-                host=Config.MYSQL_HOST,
-                user=Config.MYSQL_USER,
-                password=Config.MYSQL_PASSWORD,
-                db=Config.MYSQL_DB,
-                cursorclass=pymysql.cursors.DictCursor,
-                autocommit=True
+                 host=Config.MYSQL_HOST,
+                 user=Config.MYSQL_USER,
+                 password=Config.MYSQL_PASSWORD,
+                 database=Config.MYSQL_DB,
+                 port=Config.MYSQL_PORT
+                 cursorclass=pymysql.cursors.DictCursor,
+                 autocommit=True
             )
         except Exception as e:
             print(f"Database connection error: {e}")
