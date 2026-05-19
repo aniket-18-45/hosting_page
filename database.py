@@ -55,14 +55,14 @@ class Database:
         return result[0] if result else None
     
     def create_user(self, name, email, password_hash):
-    query = """
-    INSERT INTO users (name, email, password_hash) 
-    VALUES (%s, %s, %s)
-    """
+        query = """
+        INSERT INTO users (name, email, password_hash) 
+        VALUES (%s, %s, %s)
+        """
     
-    self.execute_query(query, (name, email, password_hash))
+        self.execute_query(query, (name, email, password_hash))
     
-    return 1
+        return 1
     
     def record_download(self, user_id, version='v1.0.0'):
         query = """
